@@ -1,0 +1,48 @@
+<main>
+    <h4>Consulta - Sport</h4>
+
+    <table class="table">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th> 
+            <th scope="col">Ações</th>           
+        </thead>
+        <tbody>
+            <tr *ngFor="let sport of sports">
+                <td>{{sport.id}}</td>
+                <td>{{sport.nome}}</td>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onAtualizar(sport)">Atualizar</button>
+                    <button class="btn btn-secondary" (click)="deleteSport(sport)" style="margin-left: 5px;">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Atualizar Sport</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" [formGroup]="formSport">
+                        <div class="form-group"> 
+                            <div class="col-sm-12">
+                                <label for="nome" class="control-label">Nome: </label>                           
+                                <input type="text" class="form-control" formControlName="nome" 
+                                  id="nome">
+                            </div>        
+                        </div> 
+                    </form>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-secondary" (click)="updateSport(formSport)" >Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

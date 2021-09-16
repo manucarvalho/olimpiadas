@@ -1,0 +1,95 @@
+<main>
+    <h4>Cadastrar Prova</h4>
+    <form class="form-horizontal" [formGroup]="formProva">
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="nome" class="control-label">Nome</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <input type="text" class="form-control" formControlName="nome" 
+                  id="nome" placeholder="Nome" required>
+                <ng-container *ngIf="formProva.controls.nome.touched">
+                    <span *ngIf="formProva.controls.nome.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="genero" class="control-label">Gênero</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <select class="form-control" id="genero" formControlName="genero" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="misto">Misto</option>
+                </select>
+                <ng-container *ngIf="formProva.controls.genero.touched">
+                    <span *ngIf="formProva.controls.genero.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="tipo" class="control-label">Tipo</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <select class="form-control" id="tipo" formControlName="tipo" required>
+                    <option value="individual">Individual</option>
+                    <option value="equipe">Equipe</option>
+                </select>
+                <ng-container *ngIf="formProva.controls.tipo.touched">
+                    <span *ngIf="formProva.controls.tipo.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="premiacao" class="control-label">Premiação</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <select class="form-control" id="premiacao" formControlName="premiacao" required>
+                    <option>Sim</option>
+                    <option>Não</option>
+                </select>
+                <ng-container *ngIf="formProva.controls.premiacao.touched">
+                    <span *ngIf="formProva.controls.premiacao.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="sport" class="control-label">Sport</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <select class="form-control" id="sport" formControlName="sport" required>
+                    <option *ngFor="let sport of sports" [ngValue]="sport">{{ sport.nome }}</option>
+                </select>
+                <ng-container *ngIf="formProva.controls.sport.touched">
+                    <span *ngIf="formProva.controls.sport.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+    
+        <button type="submit" class="btn btn-secondary" (click)="saveProva(formProva)">Salvar</button>        
+    </form>    
+</main>
+

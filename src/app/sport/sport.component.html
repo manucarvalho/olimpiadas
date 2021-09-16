@@ -1,0 +1,23 @@
+<main>
+    <h4>Cadastrar Sport</h4>
+    <form class="form-horizontal" [formGroup]="formSport">
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="nome" class="control-label">Nome</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <input type="text" class="form-control" formControlName="nome" 
+                  id="nome" placeholder="Nome" required>
+                <ng-container *ngIf="formSport.controls.nome.touched">
+                    <span *ngIf="formSport.controls.nome.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+        
+    
+        <button type="submit" class="btn btn-secondary" (click)="saveSport(formSport)">Salvar</button>        
+    </form>    
+</main>

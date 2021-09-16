@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* Color Theme Swatches in Hex 
+.white { color: #FFFFFF; }
+.yellow { color: #FBF37C; }
+.light-grey { color: #7F7F7F; }
+.dark-grey { color: #58555A; }
+.black { color: #000000; }*/
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+body{
+    background-color: #58555A;
+    /*margin: 0;
+    padding: 0;*/
+}
+html, body{
+    min-height: 100%;
+}

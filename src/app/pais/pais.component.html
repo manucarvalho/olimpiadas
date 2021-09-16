@@ -1,0 +1,24 @@
+<main>
+    <h4>Cadastrar País</h4>
+    <form class="form-horizontal" [formGroup]="formPais">
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="nome" class="control-label">Nome</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <input type="text" class="form-control" formControlName="nome" 
+                  id="nome" placeholder="Nome" required>
+                <ng-container *ngIf="formPais.controls.nome.touched">
+                    <span *ngIf="formPais.controls.nome.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+    
+        <button type="submit" class="btn btn-secondary" (click)="savePais(formPais)">Salvar</button>        
+    </form>    
+</main>
+
+

@@ -1,0 +1,50 @@
+<nav ngbNav #nav="ngbNav" class="nav-tabs">
+    <ng-container ngbNavItem>
+        <h3>Olimpiadas</h3>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="dropdownBasic1" ngbDropdownToggle>País</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <a class="nav-link" routerLink="/pais" href="#"><button ngbDropdownItem>Cadastrar</button></a>                    
+                    <a class="nav-link" routerLink="/consultapais" href="#"><button ngbDropdownItem>Consultar</button></a>
+                </div>
+        </div>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="dropdownBasic2" ngbDropdownToggle>Atleta</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                    <a class="nav-link" routerLink="/atleta" href="#"><button ngbDropdownItem>Cadastrar</button></a>                    
+                    <a class="nav-link" routerLink="/consultaatleta" href="#"><button ngbDropdownItem>Consultar</button></a>
+                </div>
+        </div>        
+    </ng-container>
+    <ng-container ngbNavItem>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="dropdownBasic3" ngbDropdownToggle>Equipe</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
+                    <a class="nav-link" routerLink="/equipe" href="#"><button ngbDropdownItem>Cadastrar</button></a>                    
+                    <a class="nav-link" routerLink="/consultaequipe" href="#"><button ngbDropdownItem>Consultar</button></a>
+                </div>
+        </div>        
+    </ng-container>
+    <ng-container ngbNavItem>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="dropdownBasic4" ngbDropdownToggle>Sport</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic4">
+                    <a class="nav-link" routerLink="/sport" href="#"><button ngbDropdownItem>Cadastrar</button></a>                    
+                    <a class="nav-link" routerLink="/consultasport" href="#"><button ngbDropdownItem>Consultar</button></a>
+                </div>
+        </div>        
+    </ng-container>
+    <ng-container ngbNavItem>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="dropdownBasic5" ngbDropdownToggle>Prova</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic5">
+                    <a class="nav-link" routerLink="/prova" href="#"><button ngbDropdownItem>Cadastrar</button></a>                    
+                    <a class="nav-link" routerLink="/consultaprova" href="#"><button ngbDropdownItem>Consultar</button></a>
+                </div>
+        </div>        
+    </ng-container>
+</nav>

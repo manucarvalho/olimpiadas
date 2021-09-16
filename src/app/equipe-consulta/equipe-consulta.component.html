@@ -1,0 +1,62 @@
+<main>
+    <h4>Consulta - Equipe</h4>
+
+    <table class="table">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th> 
+            <th scope="col">Quantidade de atletas</th>
+            <th scope="col">Atletas</th> 
+                    
+        </thead>
+        <tbody>
+            <tr *ngFor="let equipe of equipes">
+                <td>{{ equipe.id }}</td>
+                <td>{{ equipe.nome }}</td>
+                <td>{{ equipe.quantAtletas }}</td>
+                <td *ngFor="let atleta of equipe.atletas">{{ atleta.nome }}</td>
+               
+                <td>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onAtualizar(equipe)">Atualizar</button>
+                    <button class="btn btn-secondary" (click)="deleteEquipe(equipe)" style="margin-left: 5px;">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Atualizar Equipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" [formGroup]="formEquipe">
+                        <div class="form-group"> 
+                            <div class="col-sm-12">
+                                <label for="nome" class="control-label">Nome: </label>                           
+                                <input type="text" class="form-control" formControlName="nome" 
+                                  id="nome">
+                                <label for="nome" class="control-label">Quantidade de atletas: </label>                           
+                                <input type="text" class="form-control" formControlName="quantAtletas" 
+                                  id="quantAtletas">
+                                <div class="formGroup" formGroupName="atletas">
+                                    <label for="nome" class="control-label">Atletas: </label>                           
+                                    <input type="text" class="form-control" formControlName="nome" 
+                                        id="nome">
+                                </div>
+                            </div>        
+                        </div> 
+                    </form>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-secondary" (click)="updateEquipe(formEquipe)" >Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

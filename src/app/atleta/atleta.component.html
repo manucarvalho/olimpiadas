@@ -1,0 +1,57 @@
+<main>
+    <h4>Cadastrar Atleta</h4>
+    <form class="form-horizontal" [formGroup]="formAtleta">
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="nome" class="control-label">Nome</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <input type="text" class="form-control" formControlName="nome" 
+                  id="nome" placeholder="Nome" required>
+                <ng-container *ngIf="formAtleta.controls.nome.touched">
+                    <span *ngIf="formAtleta.controls.nome.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="genero" class="control-label">Gênero</label>
+            </div>
+          
+            <div class="col-sm-12">
+                <select class="form-control" id="genero" formControlName="genero" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+                <ng-container *ngIf="formAtleta.controls.genero.touched">
+                    <span *ngIf="formAtleta.controls.genero.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-12">
+                <label for="pais" class="control-label">País</label>                
+            </div>
+          
+            <div class="col-sm-12">
+                <select class="form-control" id="pais" formControlName="pais" required>
+                    <option *ngFor="let pais of paises" [ngValue]="pais">{{ pais.nome }}</option>
+                </select>
+                <ng-container *ngIf="formAtleta.controls.pais.touched">
+                    <span *ngIf="formAtleta.controls.pais.errors">
+                        Campo obrigatório
+                    </span>
+                </ng-container>
+            </div>        
+        </div>
+    
+        <button type="submit" class="btn btn-secondary" (click)="saveAtleta(formAtleta)">Salvar</button>        
+    </form>    
+</main>
