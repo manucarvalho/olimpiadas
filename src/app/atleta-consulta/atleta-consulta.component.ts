@@ -36,8 +36,8 @@ export class AtletaConsultaComponent implements OnInit {
     });
   }
 
-  deleteAtleta(atleta: Atleta){
-    this.atletaService.deleteAtleta(atleta).subscribe(() => {
+  deleteAtleta(form: FormGroup){
+    this.atletaService.deleteAtleta(form.value).subscribe(() => {
       this.getAtletas();
       alert('Atleta deletado da lista.');
     });
@@ -49,7 +49,7 @@ export class AtletaConsultaComponent implements OnInit {
     });
   }
 
-  onAtualizar(atleta: Atleta){
+  preencherForm(atleta: Atleta){
     this.formAtleta.controls['id'].setValue(atleta.id);
     this.formAtleta.controls['nome'].setValue(atleta.nome);
     this.formAtleta.controls['genero'].setValue(atleta.genero);

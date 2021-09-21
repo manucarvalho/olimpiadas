@@ -31,20 +31,20 @@ export class SportConsultaComponent implements OnInit {
     });
   }
 
-  deleteSport(sport: Sport){
-    this.sportService.deleteSport(sport).subscribe(() => {
+  deleteSport(form: FormGroup){
+    this.sportService.deleteSport(form.value).subscribe(() => {
       this.getSports();
-      alert('Sport deletado da lista.');
+      alert('Esporte deletado da lista.');
     });
   }
 
   updateSport(form: FormGroup) {
     this.sportService.updateSport(form.value).subscribe(() => {
-      alert('Sport atualizado.');
+      alert('Esporte atualizado.');
     });
   }
 
-  onAtualizar(sport: Sport){
+  preencherForm(sport: Sport){
     this.formSport.controls['id'].setValue(sport.id);
     this.formSport.controls['nome'].setValue(sport.nome);
   }

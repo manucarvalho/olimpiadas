@@ -34,8 +34,8 @@ export class PaisConsultaComponent implements OnInit {
     });
   }
 
-  deletePais(pais: Pais){
-    this.paisService.deletePais(pais).subscribe(() => {
+  deletePais(form: FormGroup){
+    this.paisService.deletePais(form.value).subscribe(() => {
       this.getPaises();
       alert('Pais deletado da lista.');
     });
@@ -47,7 +47,7 @@ export class PaisConsultaComponent implements OnInit {
     });
   }
 
-  onAtualizar(pais: Pais){
+  preencherForm(pais: Pais){
     this.formPais.controls['id'].setValue(pais.id);
     this.formPais.controls['nome'].setValue(pais.nome);
   }

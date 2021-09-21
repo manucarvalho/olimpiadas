@@ -9,9 +9,14 @@
 
 body{
     background-color: #58555A;
-    /*margin: 0;
-    padding: 0;*/
+    /*margin: 0px;
+    padding: 0px;*/
 }
-html, body{
+/*html, body{
     min-height: 100%;
+    position: relative;
 }
+footer{
+    position: absolute;
+    margin-bottom: 0;
+}*/

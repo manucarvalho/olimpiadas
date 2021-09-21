@@ -17,19 +17,19 @@
                 <td *ngFor="let atleta of equipe.atletas">{{ atleta.nome }}</td>
                
                 <td>
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onAtualizar(equipe)">Atualizar</button>
-                    <button class="btn btn-secondary" (click)="deleteEquipe(equipe)" style="margin-left: 5px;">Deletar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateModal" (click)="preencherForm(equipe)">Atualizar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="preencherForm(equipe)" style="margin-left: 5px;">Deletar</button>
                 </td>
             </tr>
         </tbody>
     </table>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Atualização-->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Atualizar Equipe</h5>
+                    <h5 class="modal-title" id="updateModalLabel">Atualizar Equipe</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -54,6 +54,25 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="button" class="btn btn-secondary" (click)="updateEquipe(formEquipe)" >Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Deletar Equipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">                    
+                        <p>Tem certeza que deseja deletar este item? </p>           
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" (click)="deleteEquipe(formEquipe)">Deletar</button>
                 </div>
             </div>
         </div>

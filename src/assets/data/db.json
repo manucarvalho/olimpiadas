@@ -25,10 +25,6 @@
     {
       "id": 3,
       "nome": "Natação"
-    },
-    {
-      "nome": "Esgrima",
-      "id": 4
     }
   ],
   "atletas": [
@@ -120,40 +116,6 @@
           }
         }
       ]
-    },
-    {
-      "nome": "teste",
-      "quantAtletas": 3,
-      "atletas": [
-        {
-          "id": 1,
-          "nome": "Maria Silva",
-          "genero": "feminino",
-          "pais": {
-            "id": 1,
-            "nome": "Brasil"
-          }
-        },
-        {
-          "nome": "Juan Perez",
-          "genero": "masculino",
-          "pais": {
-            "id": 1,
-            "nome": "Argentina"
-          },
-          "id": 2
-        },
-        {
-          "id": 3,
-          "nome": "Fulane",
-          "genero": "feminino",
-          "pais": {
-            "id": 3,
-            "nome": "China"
-          }
-        }
-      ],
-      "id": 2
     }
   ]
 }

@@ -38,8 +38,8 @@ export class ProvaConsultaComponent implements OnInit {
     });
   }
 
-  deleteProva(prova: Prova){
-    this.provaService.deleteProva(prova).subscribe(() => {
+  deleteProva(form: FormGroup){
+    this.provaService.deleteProva(form.value).subscribe(() => {
       this.getProvas();
       alert('Prova deletada da lista.');
     });
@@ -51,7 +51,7 @@ export class ProvaConsultaComponent implements OnInit {
     });
   }
 
-  onAtualizar(prova: Prova){
+  preencherForm(prova: Prova){
     this.formProva.controls['id'].setValue(prova.id);
     this.formProva.controls['nome'].setValue(prova.nome);
     this.formProva.controls['genero'].setValue(prova.genero);

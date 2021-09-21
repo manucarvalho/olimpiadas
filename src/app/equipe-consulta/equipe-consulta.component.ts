@@ -17,16 +17,16 @@ export class EquipeConsultaComponent implements OnInit {
     id: [''],
     nome: [''],
     quantAtletas: [''],
-    atletas:  this.formBuilder.array([this.createAtleta()])
+    //atletas:  this.formBuilder.array([this.createAtleta()])
     //atletas: ['']
-    /*atletas: this.formBuilder.array([
+    atletas: this.formBuilder.array([
       this.formBuilder.group({
         id: [''],
         nome: [''],
         genero: [''],
         pais: ['']
       })
-    ])*/
+    ])
 
     
   })
@@ -44,8 +44,8 @@ export class EquipeConsultaComponent implements OnInit {
     });
   }
 
-  deleteEquipe(equipe: Equipe){
-    this.equipeService.deleteEquipe(equipe).subscribe(() => {
+  deleteEquipe(form: FormGroup){
+    this.equipeService.deleteEquipe(form.value).subscribe(() => {
       this.getEquipes();
       alert('Equipe deletada da lista.');
     });
@@ -57,7 +57,7 @@ export class EquipeConsultaComponent implements OnInit {
     });
   }
 
-  onAtualizar(equipe: Equipe){
+  preencherForm(equipe: Equipe){
     this.formEquipe.controls['id'].setValue(equipe.id);
     this.formEquipe.controls['nome'].setValue(equipe.nome);
     this.formEquipe.controls['quantAtletas'].setValue(equipe.quantAtletas);
@@ -75,13 +75,13 @@ export class EquipeConsultaComponent implements OnInit {
     //this.formEquipe.controls['atletas'].patchValue(atletasFormArray); 
   }
 
-  createAtleta(): FormGroup{
+  /*createAtleta(): FormGroup{
     return this.formBuilder.group({
       id: [''],
       nome: [''],
       genero: [''],
       pais: ['']
     })
-  } 
+  } */
  
 }
